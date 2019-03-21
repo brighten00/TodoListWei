@@ -1,0 +1,19 @@
+for item in itemlist
+  - var foo= "pencil" + item.id
+  - var fkk= "remove" + item.id
+  - var rec= "record" + item.id
+  - var dat= "date" + item.id
+  div(id=rec, class="record")
+    button.btn.btn-default.btn-xs(type='button', id=foo,
+    data-toggle='modal', data-target='#myModal')
+      i.fas.fa-pen(aria-hidden='true')
+    button.btn.btn-default.btn-xs(type='button', id=fkk)
+      i.fas.fa-times(aria-hidden='true')
+    span(class=foo)=item.message
+    span &nbsp
+    span(class=dat)=item.tododate
+    span &nbsp
+    span(class='dstodo')
+    p
+ 
+script(src='./javascripts/buttonlist.js')
