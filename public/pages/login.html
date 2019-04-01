@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <label for="username">Username</label><input type="text" id="username" />
+    </div>
+    <div>
+      <label for="password">Password</label
+      ><input type="password" id="password" />
+    </div>
+    <button id="login" onclick="login()">login</button>
+  </body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!-- <script src="../js/basic.js"></script> -->
+  <script>
+    function login() {
+      var username = $("#username").val();
+      var password = $("#password").val();
+      var userinfo = { username: username, password: password };
+      console.log(userinfo);
+      $.ajax({
+        url: "/restful/login",
+        type: "POST",
+        data: userinfo,
+        success: function(response) {
+          if (response.result == "redirect") {
+            //redirecting to main page from here.
+            window.location.replace(response.url);
+          }
+        }
+      });
+    }
+  </script>
+</html>
