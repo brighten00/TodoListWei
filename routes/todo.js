@@ -126,4 +126,9 @@ router.get("/login", function(req, res) {
   res.redirect("./pages/login.html");
 });
 
+router.get("/logout", function(req, res) {
+  req.session.user = null;
+  res.redirect("/restful/login");
+});
+
 module.exports = router;

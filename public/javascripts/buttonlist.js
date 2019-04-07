@@ -63,3 +63,8 @@ $("#myModal #saveitem").on("click", function() {
     alert("Please enter the thing you need to do!");
   }
 });
+
+$("#logout").on("click", function() {
+  alert("logout!");
+  window.location.replace("/restful/logout");
+});

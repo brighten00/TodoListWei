@@ -69,4 +69,4 @@ function calDaysTodo(date) {
   }
 }
 
-window.onbeforeunload(daysTodo);
+window.onbeforeunload = daysTodo;

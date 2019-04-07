@@ -15,7 +15,7 @@ module.exports.InsertNew = function(data, callback) {
       //descending order
       collection
         .find({}, { id: 1 })
-        .sort({ id: -1 })
+        .sort({ tododate: 1 })
         .limit(1)
         .toArray(function(err, items) {
           if (err) throw err;
